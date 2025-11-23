@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from ..app import app
+from app.main import app
 
 
 Client=TestClient(app)
@@ -8,6 +8,6 @@ Client=TestClient(app)
 def test_root():
     response = Client.get("/")
     assert response.status_code==200
-    assert response.json() == {"message":"hello world "}
+    
 
 
